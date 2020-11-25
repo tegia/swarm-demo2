@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+    mongodb:
+        hostname: mongodb
+        container_name: project2-mongo
+        image: mongo:4.4.1
+        networks:
+            - service-swarm
+        expose:
+          - 27017
+        ports:
+          - 127.0.0.1:27017:27017
+    redis:
+        image: redis
+        networks:
+            - service-swarm
+        deploy:
+            replicas: 1
+            placement:
+                constraints: [node.role == manager]
+
+secrets:
+    db_password:
+        external: true
+
+networks: 
+    service-swarm:
