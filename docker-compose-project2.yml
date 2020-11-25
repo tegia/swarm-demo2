@@ -6,8 +6,8 @@ services:
         image: mongo:4.4.1
         networks:
             - service-swarm
-        expose:
-            - 27017
+        ports:
+            - 27017:27017
         volumes: 
             -   mongodb_data:/data/db
         deploy:
