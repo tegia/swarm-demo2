@@ -17,7 +17,7 @@ services:
 
 volumes: 
     mongodb_data:
-        name: swarm_mongodb_data
+
 secrets:
     db_password:
         external: true
