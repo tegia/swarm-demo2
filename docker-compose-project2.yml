@@ -4,6 +4,7 @@ services:
     mongodb:
         hostname: mongodb
         image: mongo:4.4.1
+        restart: always
         networks:
             - service-swarm
         ports:
