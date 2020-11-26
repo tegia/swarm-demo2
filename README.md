@@ -56,6 +56,10 @@ docker node update --label-rm demo_nginx ytnceolfpy0sre2rbu782zbkk
 docker node ls -q | xargs docker node inspect \
   -f '{{ .ID }} [{{ .Description.Hostname }}]: {{ .Spec.Labels }}'
 
+i6m5t7ecmu8yv6xfny5xz4vv9 [do-worker1]: map[api:true nginx:true]
+twj0h009ik6bntl4ejoae4pe7 [do-worker2]: map[api:true]
+xegjeyiu5h0j5yu2wgwld1pdg [manager]: map[]
+
 # Deploy
 docker stack deploy -c docker-compose.yml demo
 
